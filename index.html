@@ -1,64 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="styles.css">
   <meta charset="utf-8">
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-  <script>
-  function computerPlay(){
-     let comp = Math.floor(Math.random()*3)
-     switch(comp){
-       case 0:
-         return "rock";
-         break;
-       case 1:
-         return "paper";
-         break;
-       case 2:
-         return "scissors";
-         break;
-     }
-  }
-  function playRound(playerSelection, computerSelection){
-    switch(playerSelection.toLowerCase()+computerSelection.toLowerCase()){
-      case "scissorspaper":
-      case "rockscissors":
-      case "paperrock":
-        console.log("you won this round")
-        return 1;
-        break;
-      case "paperscissors":
-      case "scissorsrock":
-      case "rockpaper":
-        console.log("you lost this round");
-        return -1;
-        break;
-      case "paperpaper":
-      case "scissorsscissors":
-      case "rockrock":
-         console.log("this round was a tie");
-         return 0;
-         break;
-      default:
-         return 0;
-      } 
-   }
-   function game(){
-     let score = 0
-     for (i=0; i<5; i++){
-       player = prompt("What will your move be?");
-       comp = computerPlay();
-       score+=playRound(player, comp);
-     }
-     if (score === 0){
-        return "It's a tie!";
-     }else if (score > 0){
-        return "You won!";
-     }else{
-        return "You lose!";
-     }
-   }
-  </script>
+  <div id="start">
+  <button class="start_button">Start Game</button>
+  </div>
+  <div id="container">
+    <button id="rock" class="selection">Rock</button>
+    <button id="paper" class="selection">Paper</button>
+    <button id="scissors" class="selection">Scissors</button>
+  </div>
 </body>
+<script src="script.js"></script>
 </html
